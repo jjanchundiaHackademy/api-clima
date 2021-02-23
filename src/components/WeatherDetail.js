@@ -3,11 +3,11 @@ import axios from 'axios';
 const WeatherList = () => {
 
     const [cities, setCities] = useState([]);
-    
+
     useEffect(() => {
         const obtenerClima = async () => {
           try {
-            const url = 'http://api.openweathermap.org/data/2.5/box/city?bbox=12,32,15,37,10&appid=7bf9ec5f7bc868aa81b63ff00b8f0ff7';
+            const url = 'https://api.openweathermap.org/data/2.5/box/city?bbox=12,32,15,37,10&appid=7bf9ec5f7bc868aa81b63ff00b8f0ff7';
             const resultado = await axios.get(url);
             const result = resultado.data.list.map(item=>{
                 return{
