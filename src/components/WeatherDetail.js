@@ -40,9 +40,16 @@ const WeatherList = () => {
               alert("Ciudad ya ingresada, seleccione otra!!!");
               return;
             }
-          }
-        }
+        }}
         
+        //Llenamos nuestro state(array) con los favoritos que estan el localstorage
+        // for (const i in favoritosStorage) {
+        //   favorite.push({
+        //     name:favoritosStorage[i].name,
+        //     id:favoritosStorage[i].id
+        //   });
+        // }
+
         //Llenamos nuestro array con cada item q se 
         //agrega manualmente
         favorite.push({
