@@ -25,10 +25,7 @@ const WeatherList = () => {
         obtenerClima();
       }, []);
 
-      const [favorite, setFavorite] = useState([]);
-
       const addFavorite=(name, id)=>{
-        debugger
         const favoritos = localStorage.getItem('favorite');
         const favoritosStorage = JSON.parse(favoritos);
 
@@ -42,23 +39,15 @@ const WeatherList = () => {
             }
         }}
         
-        //Llenamos nuestro state(array) con los favoritos que estan el localstorage
-        // for (const i in favoritosStorage) {
-        //   favorite.push({
-        //     name:favoritosStorage[i].name,
-        //     id:favoritosStorage[i].id
-        //   });
-        // }
-
-        //Llenamos nuestro array con cada item q se 
-        //agrega manualmente
-        favorite.push({
+        //Llenamos nuestro array del localstorage con cada 
+        //item q se agrega manualmente
+        favoritosStorage.push({
           name:name,
           id:id
         });
 
         //Actualizamos nuestro localstorage con información de favoritos nueva
-        localStorage.setItem('favorite', JSON.stringify(favorite));
+        localStorage.setItem('favorite', JSON.stringify(favoritosStorage));
         alert('Ciudad agregada a Favoritos!!!');
       }
 
