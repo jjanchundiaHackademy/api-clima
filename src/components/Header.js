@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route, Redirect, BrowserRouter as Router, useHistory, Switch, Link } from "react-router-dom";
+import {Route, BrowserRouter as Router, Switch, Link } from "react-router-dom";
 import Favorites from './Favorites';
 import Weather from './WeatherList';
 import P404 from './P404';

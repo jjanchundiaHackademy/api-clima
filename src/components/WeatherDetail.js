@@ -51,6 +51,7 @@ const WeatherList = () => {
         alert('Ciudad agregada a Favoritos!!!');
       }
 
+      //Búsqueda de items en la tabla
       const search=()=> {
         var tableReg = document.getElementById('regTable');
         var searchText = document.getElementById('searchTerm').value.toLowerCase();
