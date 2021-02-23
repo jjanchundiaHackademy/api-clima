@@ -33,10 +33,12 @@ const WeatherList = () => {
 
         //Buscamos en localstorage item q no sea repetido, 
         //si es repetido no se agrega
-        for (let i = 0; i < favoritosStorage.length; i++) {
-          if (favoritosStorage[i].id === id) {
-            alert("Ciudad ya ingresada, seleccione otra!!!");
-            return;
+        if (favoritosStorage) {
+          for (let i = 0; i < favoritosStorage.length; i++) {
+            if (favoritosStorage[i].id === id) {
+              alert("Ciudad ya ingresada, seleccione otra!!!");
+              return;
+            }
           }
         }
         
