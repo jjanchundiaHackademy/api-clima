@@ -3,28 +3,37 @@ import {Route, BrowserRouter as Router, Switch, Link } from "react-router-dom";
 import Favorites from './Favorites';
 import Weather from './WeatherList';
 import P404 from './P404';
-import Container from './Container';
+import Home from './Home';
 
 const Header = () => {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <div className="container-fluid">
-            {/* <a className="navbar-brand" href="#">Proyecto</a> */}
-            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
+            {/* <a className="navbar-brand" href="#">Navbar</a> */}
+            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon"></span>
             </button>
-            <div className="collapse navbar-collapse container" id="navbarNav">
-            <ul className="navbar-nav">
-            <ol>
-                <h1>
-                    <a href='/Weather' >Ciudad {'  '}</a>
-                    <a href='/Favorites' >{'     '}Favoritos</a>
-                </h1>
+
+            <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul className="navbar-nav mr-auto">
+                <li className="nav-item active">
+                    <h5>
+                        <a href='/' className='nav-link'>Home| {''}</a>
+                    </h5>
+                </li>
+                <li className="nav-item">
+                    <h5>
+                        <a href='/Weather' className='nav-link'>Ciudad|{''}</a>
+                    </h5>
+                </li>
+                <li className="nav-item">
+                    <h5>
+                        <a href='/Favorites' className='nav-link'>{''}Favoritos|</a>
+                    </h5>
+                </li>
                 <Router>
-                    {/* className='btn btn-primary' */}
-                    <Switch>   
+                    <Switch>
                         <Route exact path='/'>
-                            <Container/>
+                            <Home/>
                         </Route>                     
                         <Route exact path='/Favorites'>
                             <Favorites/>
@@ -37,11 +46,9 @@ const Header = () => {
                         </Route>
                     </Switch>
                 </Router>
-                </ol>
-            </ul>
+                </ul>
             </div>
-        </div>
-        </nav>
+            </nav>
     )
 }
 

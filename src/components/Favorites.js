@@ -4,7 +4,7 @@ import FavoritesList from "./FavoritesList";
 const Favorites = () => {
     return (
         <div className='row'>
-        <FavoritesList/>
+            <FavoritesList/>
         </div>
     )
 }

@@ -55,30 +55,28 @@ const FavoritesList = () => {
     }
 
     return (
-        <div>
+        <div className='container mt-5'>
           <div className='row'>
             <input id="searchTerm"
                type="text"
                autoComplete='off'
-               className='form-control'
+               className='form-control mb-2'
                placeholder='Ingrese su búsqueda...' 
                onKeyUp={search} />
           </div>
-          <div className='row'>
             <table className="table" id='regTable'>
             <thead>
                 <tr>
-                {/* <th scope="col">#</th> */}
-                <th scope="col">Ciudad</th>
-                <th scope="col"></th>
+                  <th scope="col">Ciudad</th>
+                  <th scope="col"></th>
                 </tr>
             </thead>
             <tbody>
                 {
                   cities !== null ? cities.map(x=>{
                     return(
-                      <tr>
-                        <td key={x=>x.id}>{x.name}</td>
+                      <tr key={x.id}>
+                        <td>{x.name}</td>
                         <td>
                           <button className='btn btn-danger' onClick={()=>removeFavorite(x.id)}>Eliminar</button>
                         </td>
@@ -87,7 +85,6 @@ const FavoritesList = () => {
                 }): null}
             </tbody>
             </table>
-            </div>
         </div>)
 }
 

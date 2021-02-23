@@ -16,8 +16,6 @@ const WeatherList = () => {
                   temp:item.main.temp
               }})
             setCities(result);
-    
-            console.log(result);
           } catch (error) {
             console.log(error.response);
           }
@@ -27,7 +25,7 @@ const WeatherList = () => {
 
       const addFavorite=(name, id)=>{
         const favoritos = localStorage.getItem('favorite');
-        const favoritosStorage = JSON.parse(favoritos);
+        const favoritosStorage = JSON.parse(favoritos) ? JSON.parse(favoritos) : [];
 
         //Buscamos en localstorage item q no sea repetido, 
         //si es repetido no se agrega
@@ -73,12 +71,12 @@ const WeatherList = () => {
     }
 
     return (
-        <div className='mt-4'>
+        <div className='container mt-5'>
           <div className='row'>
             <input id="searchTerm"
                type="text"
                autoComplete='off'
-               className='form-control'
+               className='form-control mb-2'
                placeholder='Ingrese su búsqueda...' 
                onKeyUp={search} />
           </div>
@@ -95,10 +93,10 @@ const WeatherList = () => {
                 {
                   cities.map(x=>{
                     return(
-                      <tr>
-                        <td key={x=>x.id}>{x.name}</td>
-                        <td key={x=>x.id}>{x.temp}</td>
-                        <td key={x=>x.id}>{x.pressure}</td>                        
+                      <tr key={x.id}>
+                        <td>{x.name}</td>
+                        <td>{x.temp}</td>
+                        <td>{x.pressure}</td>                        
                         <td>
                           <button className='btn btn-success' onClick={()=>addFavorite(x.name, x.id)}>Favoritos</button>
                         </td>
